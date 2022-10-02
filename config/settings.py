@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -31,6 +30,8 @@ SECRET_KEY = 'django-insecure-ov#r^^&xv&^0vmc(zj&h_t^$*52@8jicn=%*z*@s-=li!s_p@=
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+X_FRAME_OPTIONS = '*'
+CSRF_TRUSTED_ORIGINS = []
 CORS_ALLOW_ALL_ORIGINS = True
 
 
@@ -111,8 +112,6 @@ DATABASES = {
     }
 }
 
-# Heroku PostgreSQL Database
-django_heroku.settings(locals())
 
 
 # Password validation
